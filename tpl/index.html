@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Übersicht{% endblock %}
+
+{% block content %}
+<h1>Übersicht</h1>
+
+<div class="label-group">
+    <span>{{ to_number }}</span>
+    <label>Handynummer</label>
+</div>
+
+<div class="label-group">
+    <span>{{ sleep_after_call }} Sekunden</span>
+    <label>Ruhezeit nach Alarm-Anruf</label>
+</div>
+
+<div class="label-group">
+    <span>{{ from_number }}</span>
+    <label>Nummer-Alarmanlage</label>
+</div>
+
+<a class="btn" href="/configs/">Einstellungen ändern</a>
+
+{% endblock %}

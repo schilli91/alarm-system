@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Einstellungen{% endblock %}
+
+{% block content %}
+
+<h1>Einstellungen ändern</h1>
+
+<form method="post" action="/configs/">
+    <div class="input-group">
+        <input type="tel" name="to_number" value="{{ to_number }}" required>
+        <label>Handynummer</label>
+        <!--Format: +49123456789-->
+    </div>
+    <div class="input-group">
+        <input type="number" name="sleep_after_call" value="{{ sleep_after_call }}" required>
+        <label>Ruhezeit nach Alarm-Anruf</label>
+    </div>
+    <input type="submit" value="Speichern" class="btn">
+</form>
+
+<a href="/">Zurück</a>
+{% endblock %}

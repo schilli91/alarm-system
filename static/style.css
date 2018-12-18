@@ -1,0 +1,123 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  color: #34495e;
+}
+body {
+  background-color: #eee;
+  margin: 120px 0 10px;
+}
+div#content {
+  background: #fff;
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px 25px 35px;
+  border-radius: 7px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: 0.3s;
+}
+div#content:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.16), 0 6px 12px rgba(0,0,0,0.23);
+}
+/* form styling */
+form {
+  margin:50px 0 20px;
+}
+div.input-group {
+  position:relative;
+  margin-bottom:45px;
+}
+div.input-group > input {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus {
+  outline:none;
+}
+/* label */
+div.input-group > label {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+  top:-15px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* bottom bars */
+.bar {
+  position:relative; display:block; width:300px;
+}
+.bar:before, .bar:after {
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* label-group */
+div.label-group {
+  position:relative;
+  margin-bottom:25px;
+}
+div.label-group:first-of-type {
+  margin-top:45px;
+}
+div.label-group > span {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+}
+div.label-group > label {
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:-10px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* link styling */
+input.btn, a.btn {
+  padding: 10px;
+  text-decoration: none;
+  border-width: 0;
+  background: #4b7bec;
+  color: #fff;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6)
+}
