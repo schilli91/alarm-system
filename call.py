@@ -2,8 +2,8 @@ from twilio.rest import Client
 from time import sleep
 import configparser
 import os.path
+from config.config import CONFIG_DIR
 
-CONFIG_DIR = '/home/pi/dev/alarm-system/config.ini'
 if not os.path.isfile(CONFIG_DIR):
     raise Exception("The config path is invalid!")
 

@@ -1,10 +1,10 @@
+#!/usr/bin/env python3
 from flask import Flask, render_template, request, redirect, url_for
 import os.path
 import configparser
+from config.config import CONFIG_DIR
 
 app = Flask(__name__, template_folder='tpl')
-CONFIG_DIR = '/home/pi/dev/alarm-system/config.ini'
-CONFIG_DIR = 'config.ini'
 if not os.path.isfile(CONFIG_DIR):
     raise Exception("The config path is invalid!")
 
@@ -50,4 +50,4 @@ def set_configs():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5000, host='0.0.0.0')
