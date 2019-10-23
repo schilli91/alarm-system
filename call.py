@@ -1,7 +1,8 @@
-from twilio.rest import Client
-from time import sleep
-import configparser
 import os.path
+
+import configparser
+from twilio.rest import Client
+
 from config.config import CONFIG_DIR
 
 if not os.path.isfile(CONFIG_DIR):
@@ -26,7 +27,7 @@ def make_call(is_dev=False):
                                url=call_url)
     if is_dev:
         print(call.sid)
-        print("now sleep for {} seconds...".format(int(config["DEFAULT"]["SLEEP_AFTER_CALL"])))
-    sleep(int(config["DEFAULT"]["SLEEP_AFTER_CALL"]))
-    if is_dev:
-        print("wake up...")
+        # print("now sleep for {} seconds...".format(int(config["DEFAULT"]["SLEEP_AFTER_CALL"])))
+    # sleep(int(config["DEFAULT"]["SLEEP_AFTER_CALL"]))
+    # if is_dev:
+    # print("wake up...")
