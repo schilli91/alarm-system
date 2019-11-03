@@ -30,7 +30,7 @@ def schedule_connection_check(interval=60):
             poll_file.write(now.strftime('%d.%m.%Y %H:%M:%S'))
     except requests.ConnectionError:
         return
-    _ = threading.Timer(interval, schedule_connection_check).start()
+    threading.Timer(interval, schedule_connection_check).start()
 
 
 if __name__ == "__main__":
