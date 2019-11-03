@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-import os.path
-from time import sleep
+
 
 import configparser
+import os.path
+import threading
+from datetime import datetime
+from time import sleep
+
+import requests
 from gpiozero import InputDevice
 
 from call import make_call
@@ -13,12 +18,28 @@ if not os.path.isfile(CONFIG_DIR):
 
 config = configparser.ConfigParser()
 
+URL = 'http://www.google.com/'
+TIMEOUT = 5
+
+
+def schedule_connection_check(interval=60):
+    try:
+        _ = requests.get(URL, timeout=TIMEOUT)
+        with open('last_poll.txt', 'w+') as poll_file:
+            now = datetime.now()
+            poll_file.write(now.strftime('%d.%m.%Y %H:%M:%S'))
+    except requests.ConnectionError:
+        return
+    _ = threading.Timer(interval, schedule_connection_check).start()
+
+
 if __name__ == "__main__":
-    input = InputDevice(4, True)
+    input_device = InputDevice(4, True)
+    schedule_connection_check(interval=21600)
 
     while True:
         config.read(CONFIG_DIR)
-        if input.is_active:
+        if input_device.is_active:
             make_call()
             sleep(int(config["DEFAULT"]["SLEEP_AFTER_CALL"]))
         sleep(1)
