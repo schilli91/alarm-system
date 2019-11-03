@@ -35,7 +35,7 @@ def schedule_connection_check(interval=60):
 
 if __name__ == "__main__":
     input_device = InputDevice(4, True)
-    schedule_connection_check(interval=21600)
+    schedule_connection_check(interval=10800)
 
     while True:
         config.read(CONFIG_DIR)
