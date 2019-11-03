@@ -4,7 +4,7 @@ html {
 }
 body {
   background-color: #eee;
-  margin: 120px 0 10px;
+  margin: 100px 0 10px;
 }
 div#content {
   background: #fff;
@@ -120,4 +120,21 @@ input.btn, a.btn {
   outline: none;
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6)
+}
+
+/* status-panel */
+div.status-panel {
+  background: #888;
+  color: #eee;
+  padding: 5px 20px;
+  margin: 20px 0 45px;
+  border-radius: 6px;
+}
+
+div.status-green {
+  background: #1e824c;
+}
+
+div.status-red {
+  background: #cf000f;
 }

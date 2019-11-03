@@ -19,6 +19,10 @@
     <label>Nummer-Alarmanlage</label>
 </div>
 
+<div class="status-panel {{ poll_status }}">
+    <p>Letzter Online-Status: <br/>{{ last_poll}}</p>
+</div>
+
 <a class="btn" href="/configs/">Einstellungen ändern</a>
 
 {% endblock %}
